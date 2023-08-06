@@ -1,3 +1,17 @@
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('stopwords')
+
+import string
+import pandas as pd
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from collections import Counter
+from nltk import pos_tag
+
+
+# Load and preprocess data
 def preprocess(file_path):
     with open(file_path, 'r') as file:
         text = file.read().lower()
